@@ -74,9 +74,26 @@
 
     <!-- Initialize Video.js for each video -->
     <script>
-        var player1 = videojs('video1');
-        var player2 = videojs('video2');
-        var player3 = videojs('video3');
+        var player1 = videojs('video1', {
+            controls: true,
+            autoplay: false,
+            preload: 'auto',
+            fluid: true
+        });
+
+        var player2 = videojs('video2', {
+            controls: true,
+            autoplay: false,
+            preload: 'auto',
+            fluid: true
+        });
+
+        var player3 = videojs('video3', {
+            controls: true,
+            autoplay: false,
+            preload: 'auto',
+            fluid: true
+        });
     </script>
 </body>
 </html>
