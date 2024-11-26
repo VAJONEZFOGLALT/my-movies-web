@@ -26,12 +26,40 @@
         video {
             width: 100%;
             border-radius: 4px;
+            position: relative;
         }
         p {
             text-align: center;
             margin-top: 10px;
             font-size: 14px;
             color: #666;
+        }
+        .controls {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+        .skip-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .skip-buttons button {
+            padding: 8px 16px;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .skip-buttons button:hover {
+            background: rgba(0, 0, 0, 0.8);
         }
     </style>
 </head>
@@ -46,6 +74,12 @@
             Your browser does not support the video tag.
         </video>
         <p>Streamed via ngrok</p>
+        <div class="controls">
+            <div class="skip-buttons">
+                <button onclick="skipBackward('video1')">-10s</button>
+                <button onclick="skipForward('video1')">+15s</button>
+            </div>
+        </div>
     </div>
 
     <!-- Video 2 with .mp4 file -->
@@ -56,6 +90,12 @@
             Your browser does not support the video tag.
         </video>
         <p>Streamed via ngrok</p>
+        <div class="controls">
+            <div class="skip-buttons">
+                <button onclick="skipBackward('video2')">-10s</button>
+                <button onclick="skipForward('video2')">+15s</button>
+            </div>
+        </div>
     </div>
 
     <!-- Video 3 with .mp4 file -->
@@ -66,6 +106,22 @@
             Your browser does not support the video tag.
         </video>
         <p>Streamed via ngrok</p>
+        <div class="controls">
+            <div class="skip-buttons">
+                <button onclick="skipBackward('video3')">-10s</button>
+                <button onclick="skipForward('video3')">+15s</button>
+            </div>
+        </div>
     </div>
-</body>
-</html>
+
+    <script>
+        // Function to skip forward by 15 seconds
+        function skipForward(videoId) {
+            var video = document.getElementById(videoId);
+            video.currentTime += 15; // Skip forward by 15 seconds
+        }
+
+        // Function to skip backward by 10 seconds
+        function skipBackward(videoId) {
+            var video = document.getElementById(videoId);
+            video.
