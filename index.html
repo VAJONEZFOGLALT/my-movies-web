@@ -3,10 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Video.js CSS and JS -->
-    <link href="https://cdn.jsdelivr.net/npm/video.js@7.15.4/dist/video-js.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/video.js@7.15.4/dist/video.min.js"></script>
-
     <title>My Video Library</title>
     <style>
         body {
@@ -42,10 +38,10 @@
 <body>
     <h1>My Video Library</h1>
 
-    <!-- Video 1 with .mp4 file using Video.js -->
+    <!-- Video 1 with .mp4 file -->
     <div class="video-container">
         <h2>Video 1</h2>
-        <video id="video1" class="video-js vjs-default-skin" controls preload="auto">
+        <video id="video1" controls preload="auto">
             <source src="https://56da-178-164-196-146.ngrok-free.app/thefallguy.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -55,7 +51,7 @@
     <!-- Video 2 with .mp4 file -->
     <div class="video-container">
         <h2>Video 2</h2>
-        <video id="video2" class="video-js vjs-default-skin" controls preload="auto">
+        <video id="video2" controls preload="auto">
             <source src="https://56da-178-164-196-146.ngrok-free.app/video2.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -65,35 +61,11 @@
     <!-- Video 3 with .mp4 file -->
     <div class="video-container">
         <h2>Video 3</h2>
-        <video id="video3" class="video-js vjs-default-skin" controls preload="auto">
+        <video id="video3" controls preload="auto">
             <source src="https://56da-178-164-196-146.ngrok-free.app/video3.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <p>Streamed via ngrok</p>
     </div>
-
-    <!-- Initialize Video.js for each video -->
-    <script>
-        var player1 = videojs('video1', {
-            controls: true,
-            autoplay: false,
-            preload: 'auto',
-            fluid: true
-        });
-
-        var player2 = videojs('video2', {
-            controls: true,
-            autoplay: false,
-            preload: 'auto',
-            fluid: true
-        });
-
-        var player3 = videojs('video3', {
-            controls: true,
-            autoplay: false,
-            preload: 'auto',
-            fluid: true
-        });
-    </script>
 </body>
 </html>
